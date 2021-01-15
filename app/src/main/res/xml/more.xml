@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+        android:key="sign_in"
+        android:title="Sign In"
+        android:icon="@drawable/ic_account_circle_black_24"
+        android:summary="Sign in for access to all songs"/>
+    <PreferenceCategory>
+
+        <Preference
+            android:key="about"
+            android:title="About the app"
+            android:icon="@drawable/ic_info_black_24">
+            <intent
+                android:targetPackage="se.dsek.sangbok"
+                android:targetClass="se.dsek.sangbok.ui.about.AboutActivity" />
+        </Preference>
+
+        <Preference
+            android:key="dsek"
+            android:title="D-sektionen"
+            android:icon="@drawable/ic_link_black_24">
+            <intent android:action="android.intent.action.VIEW"
+                android:data="https://dsek.se" />
+        </Preference>
+
+    </PreferenceCategory>
+
+
+</androidx.preference.PreferenceScreen>

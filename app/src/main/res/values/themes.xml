@@ -1,0 +1,55 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.DSekSangbok" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/infocom</item>
+        <item name="colorPrimaryVariant">@color/dsek</item>
+        <item name="colorAccent">@color/primary</item>
+
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/background</item>
+
+    </style>
+
+
+    <style name="Theme.Draggable" parent="Theme.DSekSangbok">
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/drag_background</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize color of navigation drawer icon and back arrow -->
+        <item name="colorControlNormal">@color/primary_text</item>
+        <item name="android:textColorSecondary">@color/black</item>
+    </style>
+
+
+    <style name="song_title">
+        <item name="android:textAppearance">@android:style/TextAppearance.Material.Large</item>
+    </style>
+    <style name="song_melody">
+        <item name="android:textAppearance">@android:style/TextAppearance.Material.Medium</item>
+    </style>
+    <style name="song_title_info" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:textAppearance">@android:style/TextAppearance.Material.Large</item>
+        <item name="android:textColor">@color/infocom</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:paddingBottom">@dimen/tiny_margin</item>
+    </style>
+    <style name="song_melody_info">
+        <item name="android:textAppearance">@android:style/TextAppearance.Material.Large</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:paddingBottom">@dimen/small_margin</item>
+    </style>
+    <style name="song_lyrics">
+        <item name="android:textAppearance">@android:style/TextAppearance.Material.Medium</item>
+    </style>
+
+</resources>

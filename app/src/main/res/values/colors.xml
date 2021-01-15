@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">@color/infocom</color>
+    <color name="dsek">#FFF280A1</color>
+    <color name="infocom">#FF9966CC</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="drag_background">#AA505050</color>
+    <color name="fastscroll_bubble">@color/infocom</color>
+    <color name="not_favorite">#FF757575</color>
+
+    <color name="background">#FFFFFFFF</color>
+    <color name="primary_text">#FF212121</color>
+    <color name="transparent">@android:color/transparent</color>
+</resources>

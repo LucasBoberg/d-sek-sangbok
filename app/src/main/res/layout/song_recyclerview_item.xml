@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="song"
+            type="se.dsek.sangbok.db.Song" />
+        <variable
+            name="clickListener"
+            type="se.dsek.sangbok.ui.SongClickListener" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="10dp"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingVertical="@dimen/small_margin"
+        android:foreground="?attr/selectableItemBackground"
+        android:id="@+id/container"
+        android:onClick="@{() -> clickListener.onClick(song)}">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/song_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_toStartOf="@id/favorite_icon"
+            android:text="@{song.title}"
+            tools:text="Feta fransyskor" />
+
+        <TextView
+            android:id="@+id/melody"
+            style="@style/song_melody"
+            android:layout_toStartOf="@id/favorite_icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_gravity="center_vertical"
+            android:layout_below="@+id/title"
+            android:text="@{song.melody}"
+            tools:text="Militärmarsch av Schubert" />
+
+        <ImageView
+            android:layout_alignParentEnd="true"
+            android:id="@+id/favorite_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:layout_gravity="center_vertical"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_favorite_black_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="@{() -> clickListener.onFavoriteClick(song)}"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">@color/dsek</color>
+    <color name="background">#FF141414</color>
+    <color name="drag_background">#CC333333</color>
+    <color name="fastscroll_bubble">@color/dsek</color>
+
+    <color name="primary_text">#FFFFFFFF</color>
+</resources>

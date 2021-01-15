@@ -1,0 +1,16 @@
+<resources>
+    <string name="preference_file_key">se.dsek.sangbok.shared_preference</string>
+    
+    <string name="app_name">D-Sek Sångbok</string>
+    <string name="title_home">Songs</string>
+    <string name="title_categories">Categories</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="title_history">History</string>
+    <string name="title_more">More</string>
+    <string name="title_about">About</string>
+    <string name="search_hint">Search song, melody, lyrics…</string>
+
+    <string name="title_search">Search</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="title_licenses">Opensource Licenses</string>
+</resources>

@@ -1,0 +1,25 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.DSekSangbok" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/dsek</item>
+        <item name="colorPrimaryVariant">@color/infocom</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/background</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="ToolbarTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize color of navigation drawer icon and back arrow -->
+        <item name="colorControlNormal">@color/primary_text</item>
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+
+    <style name="song_title_info" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:textAppearance">@android:style/TextAppearance.Material.Large</item>
+        <item name="android:textColor">@color/dsek</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:paddingBottom">@dimen/tiny_margin</item>
+    </style>
+</resources>
