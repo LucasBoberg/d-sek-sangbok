@@ -1,7 +1,8 @@
 <resources>
-    <string name="preference_file_key">se.dsek.sangbok.shared_preference</string>
+    <string name="preference_file_key" translatable="false">se.dsek.sangbok.shared_preference</string>
+    <string name="first_run" translatable="false">first_run</string>
     
-    <string name="app_name">D-Sek Sångbok</string>
+    <string name="app_name" translatable="false">D-Sek Sångbok</string>
     <string name="title_home">Songs</string>
     <string name="title_categories">Categories</string>
     <string name="title_favorites">Favorites</string>
@@ -12,6 +13,13 @@
 
     <string name="title_search">Search</string>
     <string name="title_favorite">Favorite</string>
-    <string name="title_licenses">Opensource Licenses</string>
-    <string name="first_run">first_run</string>
+    <string name="title_licenses">Open source Licenses</string>
+    <string name="github_repo" translatable="false">https://github.com/LucasBoberg/d-sek-sangbok</string>
+    <string name="github" translatable="false">Github</string>
+    <string name="title_version">Version</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sing_in_summary">Sign in for access to all songs</string>
+    <string name="about_app">About the app</string>
+    <string name="dsek" translatable="false">D-sektionen</string>
+    <string name="dsek_link" translatable="false">https://dsek.se</string>
 </resources>

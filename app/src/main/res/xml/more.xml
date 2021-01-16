@@ -3,14 +3,14 @@
 
     <Preference
         android:key="sign_in"
-        android:title="Sign In"
+        android:title="@string/sign_in"
         android:icon="@drawable/ic_account_circle_black_24"
-        android:summary="Sign in for access to all songs"/>
+        android:summary="@string/sing_in_summary"/>
     <PreferenceCategory>
 
         <Preference
             android:key="about"
-            android:title="About the app"
+            android:title="@string/about_app"
             android:icon="@drawable/ic_info_black_24">
             <intent
                 android:targetPackage="se.dsek.sangbok"
@@ -19,13 +19,12 @@
 
         <Preference
             android:key="dsek"
-            android:title="D-sektionen"
+            android:title="@string/dsek"
             android:icon="@drawable/ic_link_black_24">
             <intent android:action="android.intent.action.VIEW"
-                android:data="https://dsek.se" />
+                android:data="@string/dsek_link" />
         </Preference>
 
     </PreferenceCategory>
-
 
 </androidx.preference.PreferenceScreen>

@@ -5,21 +5,22 @@
 
     <Preference
         android:key="version"
-        android:title="Version"
+        android:title="@string/title_version"
         android:summary="@string/versionName"
         app:iconSpaceReserved="false"/>
     <PreferenceCategory>
 
         <Preference
             android:key="github"
-            android:title="Github"
+            android:title="@string/github"
+            android:summary="@string/github_repo"
             app:iconSpaceReserved="false">
             <intent android:action="android.intent.action.VIEW"
-                android:data="https://dsek.se" />
+                android:data="@string/github_repo" />
         </Preference>
         <Preference
             android:key="licenses"
-            android:title="Open source licences"
+            android:title="@string/title_licenses"
             app:iconSpaceReserved="false">
             <intent
                 android:targetPackage="se.dsek.sangbok"

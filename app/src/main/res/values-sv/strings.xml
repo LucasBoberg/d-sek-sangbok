@@ -1,0 +1,17 @@
+<resources>
+    <string name="title_home">Sånger</string>
+    <string name="title_categories">Kategorier</string>
+    <string name="title_favorites">Favoriter</string>
+    <string name="title_history">Historik</string>
+    <string name="title_more">Mer</string>
+    <string name="title_about">Om</string>
+    <string name="search_hint">Sök sång, melodi, text…</string>
+
+    <string name="title_search">Sök</string>
+    <string name="title_favorite">Favorit</string>
+    <string name="title_licenses">Open source-licenser</string>
+    <string name="title_version">Version</string>
+    <string name="sign_in">Logga in</string>
+    <string name="sing_in_summary">Logga in för att få tillgång till alla sånger</string>
+    <string name="about_app">Om appen</string>
+</resources>
