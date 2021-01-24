@@ -8,13 +8,10 @@ import se.dsek.sangbok.api.SongApiClient
 import se.dsek.sangbok.db.*
 import se.dsek.sangbok.util.RateLimiter
 import se.dsek.sangbok.util.SONGS_REFRESH_TIMESTAMP_KEY
-import java.util.concurrent.TimeUnit
 
 class SongRepository(
     private val songDao: SongDao
 ) {
-
-    private val songsRateLimit = RateLimiter<String>(30, TimeUnit.DAYS)
 
     val allSongs: LiveData<List<Song>> = songDao.getAlphabetizedSongs()
 
@@ -53,21 +50,18 @@ class SongRepository(
 
     suspend fun refresh() {
         try {
-            if (songsRateLimit.shouldFetch(SONGS_REFRESH_TIMESTAMP_KEY)) {
-                Log.d("DEBUG", "Refresh songs")
-                val categoryBody = SongApiClient.apiInterface.getCategories()
-                val categoryList: List<Category> = JSONConverter.getAllCategories(categoryBody)
-                for (category in categoryList) {
-                    insertCategory(category)
-                }
-                val songBody = SongApiClient.apiInterface.getSongs()
-                val songList: List<Song> = JSONConverter.getAllSongs(songBody)
-                for (song in songList) {
-                    insertSong(song)
-                }
+            Log.d("DEBUG", "Refresh songs")
+            val categoryBody = SongApiClient.apiInterface.getCategories()
+            val categoryList: List<Category> = JSONConverter.getAllCategories(categoryBody)
+            for (category in categoryList) {
+                insertCategory(category)
+            }
+            val songBody = SongApiClient.apiInterface.getSongs()
+            val songList: List<Song> = JSONConverter.getAllSongs(songBody)
+            for (song in songList) {
+                insertSong(song)
             }
         } catch (cause: Throwable) {
-            songsRateLimit.reset(SONGS_REFRESH_TIMESTAMP_KEY)
             throw Error("Unable to refresh songs", cause)
         }
     }
