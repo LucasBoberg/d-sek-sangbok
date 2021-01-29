@@ -3,6 +3,7 @@ package se.dsek.sangbok.repository
 import android.util.Log
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import se.dsek.sangbok.api.JSONConverter
 import se.dsek.sangbok.api.SongApiClient
 import se.dsek.sangbok.db.*
@@ -12,6 +13,8 @@ import se.dsek.sangbok.util.SONGS_REFRESH_TIMESTAMP_KEY
 class SongRepository(
     private val songDao: SongDao
 ) {
+    var error = MutableLiveData<String>()
+    fun updateError(newError: String) = error.postValue(newError);
 
     val allSongs: LiveData<List<Song>> = songDao.getAlphabetizedSongs()
 
@@ -62,7 +65,8 @@ class SongRepository(
                 insertSong(song)
             }
         } catch (cause: Throwable) {
-            throw Error("Unable to refresh songs", cause)
+            // throw Error("Unable to refresh songs", cause)
+            error.postValue("Unable to refresh songs")
         }
     }
 }

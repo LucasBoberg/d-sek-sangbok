@@ -6,22 +6,34 @@ import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.view.*
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.snackbar.Snackbar
 import se.dsek.sangbok.ui.search.SearchActivity
+import se.dsek.sangbok.ui.song.SongViewModel
+import se.dsek.sangbok.ui.song.SongViewModelFactory
 
 
 class MainActivity : AppCompatActivity() {
 
+    private val mainViewModel: MainViewModel by viewModels {
+        MainViewModelFactory((application as SongApplication).songRepository)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val container: CoordinatorLayout = findViewById(R.id.container)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
@@ -36,6 +48,16 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        mainViewModel.error.observe(this, Observer {
+            if (it.isNotEmpty()) {
+                val snackbar = Snackbar.make(container, it, Snackbar.LENGTH_LONG)
+                snackbar.anchorView = navView
+                snackbar.setAction("OK", View.OnClickListener { snackbar.dismiss() })
+                snackbar.show()
+                mainViewModel.updateError("")
+            }
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
